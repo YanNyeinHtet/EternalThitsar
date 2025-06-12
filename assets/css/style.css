@@ -63,13 +63,15 @@ body {
 }
 
 main {
-    height: 100vh;
+    scroll-snap-type: y proximity;
     overflow-y: auto;
-    scroll-snap-type: y mandatory;
+    height: 100vh;
 }
 
 main > section {
     scroll-snap-align: start;
+    min-height: 100vh;
+    padding: 0;
 }
 
 /* Modern Luxury Minimalist Navbar */
@@ -530,6 +532,216 @@ nav {
     }
 }
 
+/* ===================== Wordmark Section ===================== */
+.wordmark-section {
+    width: 100%;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+}
+.wordmark-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    max-width: 1100px;
+    width: 100%;
+    height: auto;
+    padding: 0;
+}
+.wordmark-svg-col {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wordmark-svg {
+    fill: var(--primary);
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.wordmark-text-col {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    max-width: 420px;
+    padding-left: 2vw;
+}
+.wordmark-title {
+    font-family: 'Montage', serif;
+    font-size: 2.7rem;
+    color: var(--primary);
+    font-weight: normal;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.08em;
+}
+.wordmark-desc {
+    font-family: 'Poppins', sans-serif;
+    color: var(--light);
+    font-size: 1rem;
+    opacity: 0.85;
+    line-height: 1.7;
+    font-weight: 400;
+}
+@media (max-width: 900px) {
+    .wordmark-inner {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 2.5rem 1rem;
+    }
+    .wordmark-svg-col {
+        flex: none;
+    }
+    .wordmark-svg {
+        width: 220px;
+        height: 80px;
+        max-width: 80vw;
+        max-height: 30vw;
+    }
+    .wordmark-text-col {
+        align-items: center;
+        padding-left: 0;
+        max-width: 98vw;
+        text-align: center;
+    }
+    .wordmark-title {
+        font-size: 1.7rem;
+    }
+    .wordmark-desc {
+        font-size: 0.92rem;
+    }
+}
+
+/* ===================== Lockup Styles Section ===================== */
+.lockup-section {
+    width: 100%;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0;
+}
+.lockup-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2vw;
+}
+.lockup-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+}
+.lockup-title {
+    font-family: 'Montage', serif;
+    font-size: 2.3rem;
+    color: var(--primary);
+    font-weight: normal;
+    margin-bottom: 0.7rem;
+    letter-spacing: 0.08em;
+}
+.lockup-desc {
+    font-family: 'Poppins', sans-serif;
+    color: var(--light);
+    font-size: 1.08rem;
+    opacity: 0.85;
+    line-height: 1.7;
+    font-weight: 400;
+}
+.lockup-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+}
+.lockup-card {
+    background: var(--grey);
+    border-radius: 1.3rem;
+    box-shadow: 0 4px 32px 0 rgba(10,16,18,0.10);
+    padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 220px;
+    max-width: 270px;
+    flex: 1 1 220px;
+    transition: box-shadow 0.22s;
+}
+.lockup-card:hover {
+    box-shadow: 0 8px 48px 0 rgba(248,227,154,0.13);
+}
+.lockup-card-label {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+.lockup-logo-box {
+    width: 160px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    background: none;
+}
+.lockup-logo-svg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+.lockup-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    justify-content: center;
+}
+.lockup-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    justify-content: center;
+}
+@media (max-width: 900px) {
+    .lockup-cards {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+    .lockup-card {
+        max-width: 98vw;
+        min-width: 0;
+        width: 100%;
+        padding: 1.5rem 0.5rem 1.2rem 0.5rem;
+    }
+    .lockup-header {
+        margin-bottom: 1.2rem;
+    }
+}
+
 /* Responsive Styles */
 @media (max-width: 1100px) {
     .navbar-container {
@@ -624,4 +836,53 @@ nav {
         font-size: 1rem;
         padding: 0.7em 0;
     }
+}
+
+.navbar-logo-mark {
+    filter: invert(89%) sepia(44%) saturate(370%) hue-rotate(22deg) brightness(104%) contrast(97%);
+}
+
+.landing-logo-mark {
+    filter: invert(89%) sepia(44%) saturate(370%) hue-rotate(22deg) brightness(104%) contrast(97%);
+}
+
+/* Section In/Out Animations */
+.section-animate-in {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    transition: opacity 0.9s cubic-bezier(.77,0,.18,1), transform 0.9s cubic-bezier(.77,0,.18,1);
+    pointer-events: auto;
+}
+.section-animate-out {
+    opacity: 0 !important;
+    transform: scale(0.96) !important;
+    transition: opacity 0.9s cubic-bezier(.77,0,.18,1), transform 0.9s cubic-bezier(.77,0,.18,1);
+    pointer-events: none;
+}
+.symbol-section, .wordmark-section {
+    opacity: 0;
+    transform: scale(0.96);
+    pointer-events: none;
+}
+
+.cls-1 {
+    fill: var(--primary);
+}
+
+/* Individual logo sizing for Lockup Styles section */
+.lockup-mark-img {
+    width: 70px;
+    height: auto;
+}
+.lockup-wordmark-img {
+    width: 120px;
+    height: auto;
+}
+.lockup-horizontal-img {
+    width: 160px;
+    height: auto;
+}
+.lockup-vertical-img {
+    width: 60px;
+    height: auto;
 }
